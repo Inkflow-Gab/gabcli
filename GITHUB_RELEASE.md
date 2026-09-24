@@ -50,8 +50,14 @@ GabCli v0.3.0 adds:
 - Optional readline history.
 - Python packaging and installer support.
 
-Users should download the source ZIP, extract it, run `./install.sh` on a computer, and then set `GABCLI_API_KEY`. A GitHub download alone does not make a command-line program run directly on iOS or ordinary Android; Android users can use a terminal environment such as Termux, while desktop users can use Python 3.9+.
+After publishing the release, users can install the public wheel without a GitHub token:
+
+```bash
+curl -fsSL https://raw.githubusercontent.com/YOUR-USER/gabcli/main/install-from-github.sh | sh -s -- YOUR-USER/gabcli v0.3.0
+```
+
+Users should then set `GABCLI_API_KEY` or let GabCli prompt for their own model API key. A GitHub download alone does not make a command-line program run directly on iOS or ordinary Android; Android users can use a terminal environment such as Termux, while desktop users can use Python 3.9+.
 
 ## Important credential note
 
-Never upload `.env` files or API keys to GitHub. Users should provide their own authorized API key through `GABCLI_API_KEY` or GabCli's secure prompt.
+Never upload `.env` files, model API keys, or GitHub personal access tokens to GitHub. Public release assets download anonymously. Users should provide their own authorized model API key through `GABCLI_API_KEY` or GabCli's secure prompt. Do not put the maintainer's GitHub token in an installer.

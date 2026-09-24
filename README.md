@@ -116,6 +116,28 @@ gabcli
 
 The release workflow publishes a wheel and source archive whenever a `v*` tag is pushed. If you download a source archive from GitHub, extract it and run `./install.sh`.
 
+### One-line public release installer
+
+After publishing the repository and the `v0.3.0` release, users can install the public wheel without a GitHub token:
+
+```bash
+curl -fsSL https://raw.githubusercontent.com/YOUR-USER/gabcli/main/install-from-github.sh | sh -s -- YOUR-USER/gabcli v0.3.0
+```
+
+Windows PowerShell:
+
+```powershell
+irm https://raw.githubusercontent.com/YOUR-USER/gabcli/main/install-from-github.ps1 -OutFile install-gabcli.ps1
+.\\install-gabcli.ps1 -Repository YOUR-USER/gabcli -Version v0.3.0
+```
+
+Then each user supplies their own model API key:
+
+```bash
+export GABCLI_API_KEY='their-authorized-api-key'
+gabcli
+```
+
 ### Python package installation
 
 ```bash
@@ -125,6 +147,7 @@ gabcli
 ```
 
 No GitHub repository is created automatically by this workspace; replace `YOUR-USER` with the account where you publish the project.
+Do not embed a GitHub personal access token in an installer. Public releases download anonymously; private repositories require each downloader to authenticate with their own GitHub account.
 
 ## Development checks
 

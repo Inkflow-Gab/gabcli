@@ -2,6 +2,8 @@
 
 ## 0.3.0
 
+- Added public-release installers for POSIX shells and Windows PowerShell.
+- Added anonymous public-wheel download instructions; no GitHub token is required.
 - Added animated thinking and executing status indicators.
 - Added live shell-command output with exit-code reporting.
 - Added glob-based `find_files` tool.
