@@ -1,0 +1,24 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "gabcli"
+version = "0.3.0"
+description = "An animated, approval-first terminal AI coding assistant"
+readme = "README.md"
+requires-python = ">=3.9"
+authors = [{ name = "GabCli contributors" }]
+license = { text = "MIT" }
+classifiers = [
+  "Environment :: Console",
+  "License :: OSI Approved :: MIT License",
+  "Programming Language :: Python :: 3",
+  "Programming Language :: Python :: 3 :: Only",
+]
+
+[project.scripts]
+gabcli = "gabcli:main"
+
+[tool.setuptools]
+py-modules = ["gabcli", "gabcli_ui", "gabcli_diff"]
